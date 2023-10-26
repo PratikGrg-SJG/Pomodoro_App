@@ -98,12 +98,15 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                 ),
+                const SizedBox(height: 10),
                 Center(
                   child: isRunning
                       ? const Center()
                       : ElevatedButton(
                           onPressed: onResetPressed,
                           style: TextButton.styleFrom(
+                            padding: const EdgeInsets.only(
+                                left: 40, right: 40, top: 15, bottom: 15),
                             backgroundColor: Theme.of(context).cardColor,
                             shape: const StadiumBorder(),
                           ),
@@ -135,7 +138,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          "Pomodoros",
+                          "Sessions",
                           style: TextStyle(
                               fontSize: 20,
                               color: Theme.of(context)
@@ -144,13 +147,18 @@ class _HomeScreenState extends State<HomeScreen> {
                                   .color,
                               fontWeight: FontWeight.w500),
                         ),
-                        Text(
-                          "$totalPomodoros",
-                          style: TextStyle(
-                            fontSize: 40,
-                            fontWeight: FontWeight.bold,
-                            color:
-                                Theme.of(context).textTheme.displayLarge!.color,
+                        Padding(
+                          padding: const EdgeInsets.only(top: 15),
+                          child: Text(
+                            "$totalPomodoros",
+                            style: TextStyle(
+                              fontSize: 40,
+                              fontWeight: FontWeight.bold,
+                              color: Theme.of(context)
+                                  .textTheme
+                                  .displayLarge!
+                                  .color,
+                            ),
                           ),
                         ),
                       ],
